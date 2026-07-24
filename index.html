@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshay R. Dudhwala | Portfolio</title>
+    <title>Akshaykumar Dudhwala | QA Engineer</title>
     <style>
         /* ===== CSS Variables ===== */
         :root {
@@ -15,6 +15,7 @@
             --accent: #58a6ff;
             --accent2: #f0883e;
             --shadow: 0 8px 32px rgba(0,0,0,0.6);
+            --section-bg: rgba(255,255,255,0.03);
         }
         [data-theme="light"] {
             --bg: #f0f6fc;
@@ -23,6 +24,7 @@
             --text-muted: #57606a;
             --border: #d0d7de;
             --shadow: 0 8px 32px rgba(0,0,0,0.1);
+            --section-bg: rgba(0,0,0,0.03);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,16 +40,14 @@
             transition: background 0.4s, color 0.4s;
         }
 
-        /* ===== Main Card ===== */
         .card {
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             background: var(--card-bg);
             padding: 45px 40px;
             border-radius: 24px;
             box-shadow: var(--shadow);
             border: 1px solid var(--border);
-            text-align: center;
             transition: background 0.4s, border 0.4s;
             position: relative;
             overflow: hidden;
@@ -84,29 +84,58 @@
             color: #fff;
         }
 
-        /* ===== Profile Photo ===== */
+        /* ===== Profile Header ===== */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
         .profile-photo {
             width: 130px;
             height: 130px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--accent);
-            margin-bottom: 15px;
             box-shadow: 0 0 30px rgba(88,166,255,0.2);
+            flex-shrink: 0;
         }
-
-        /* ===== Name & Tagline ===== */
-        h1 {
-            font-size: 2.6rem;
+        .profile-info {
+            flex: 1;
+            text-align: left;
+        }
+        .profile-info h1 {
+            font-size: 2.4rem;
             background: linear-gradient(135deg, var(--accent), var(--accent2));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .tagline {
-            font-size: 1.15rem;
+        .profile-info .headline {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin: 4px 0;
+        }
+        .profile-info .location {
+            font-size: 0.95rem;
             color: var(--text-muted);
-            margin: 8px 0 18px;
+        }
+        .profile-info .followers {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+        .profile-info .followers strong {
+            color: var(--text);
+        }
+
+        /* ===== Typing Animation ===== */
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin: 8px 0 15px;
             min-height: 2rem;
         }
         .typed-cursor {
@@ -120,34 +149,85 @@
             50% { opacity: 0; }
         }
 
-        /* ===== Bio ===== */
-        .bio {
+        /* ===== Sections ===== */
+        .section {
+            margin: 25px 0;
+            padding: 20px 0;
+            border-top: 1px solid var(--border);
+        }
+        .section:first-of-type { border-top: none; }
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title span { font-size: 1.3rem; }
+
+        /* ===== About ===== */
+        .about-text {
             font-size: 1rem;
             line-height: 1.8;
             color: var(--text-muted);
-            margin-bottom: 25px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        }
+
+        /* ===== Experience / Education ===== */
+        .exp-item, .edu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .exp-item:last-child, .edu-item:last-child { border-bottom: none; }
+        .exp-item .company, .edu-item .school {
+            font-weight: 600;
+            color: var(--text);
+        }
+        .exp-item .tenure, .edu-item .year {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== Certifications ===== */
+        .cert-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .cert-tag {
+            background: var(--section-bg);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--text);
+            transition: 0.3s;
+        }
+        .cert-tag:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
         }
 
         /* ===== Skills ===== */
         .skills {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
             gap: 10px;
-            margin: 20px 0 25px;
         }
         .skill-tag {
-            background: var(--border);
-            color: var(--text);
+            background: var(--section-bg);
+            border: 1px solid var(--border);
             padding: 6px 18px;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 500;
             transition: 0.3s;
-            border: 1px solid transparent;
+            color: var(--text);
         }
         .skill-tag:hover {
             border-color: var(--accent);
@@ -155,26 +235,15 @@
             box-shadow: 0 4px 15px rgba(88,166,255,0.2);
         }
 
-        /* ===== GitHub Stats ===== */
-        .github-stats {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 15px 0 25px;
-            font-size: 0.95rem;
-        }
-        .github-stats span {
-            color: var(--text-muted);
-        }
-        .github-stats strong {
-            color: var(--accent);
-            font-size: 1.3rem;
-        }
-
         /* ===== Links ===== */
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
         .links a {
             display: inline-block;
-            margin: 6px 10px;
             padding: 10px 24px;
             background: var(--border);
             color: var(--text);
@@ -197,19 +266,21 @@
 
         /* ===== Footer ===== */
         .footer {
-            margin-top: 30px;
+            margin-top: 25px;
             font-size: 0.8rem;
             color: var(--text-muted);
             opacity: 0.6;
+            text-align: center;
         }
 
         /* ===== Responsive ===== */
-        @media (max-width: 600px) {
-            .card { padding: 30px 20px; }
-            h1 { font-size: 2rem; }
+        @media (max-width: 650px) {
+            .card { padding: 25px 18px; }
+            .profile-header { flex-direction: column; text-align: center; }
+            .profile-info { text-align: center; }
+            .profile-info h1 { font-size: 1.8rem; }
             .profile-photo { width: 100px; height: 100px; }
-            .github-stats { flex-direction: column; gap: 8px; }
-            .links a { display: block; margin: 8px 0; }
+            .exp-item, .edu-item { flex-direction: column; align-items: flex-start; gap: 4px; }
         }
     </style>
 </head>
@@ -219,40 +290,78 @@
     <!-- Theme Toggle -->
     <button class="theme-toggle" id="themeToggle" title="Toggle Theme">🌓</button>
 
-    <!-- Profile Photo (Replace with your image URL) -->
-    <img class="profile-photo" src="https://ui-avatars.com/api/?name=Akshay+Dudhwala&background=58a6ff&color=fff&size=130" alt="Akshay Dudhwala">
+    <!-- ===== Profile Header ===== -->
+    <div class="profile-header">
+        <img class="profile-photo" src="https://ui-avatars.com/api/?name=Akshaykumar+Dudhwala&background=58a6ff&color=fff&size=130" alt="Akshaykumar Dudhwala">
+        <div class="profile-info">
+            <h1>Akshaykumar Dudhwala</h1>
+            <div class="headline">🔍 Quality Assurance Engineer</div>
+            <div class="location">📍 Surat, Gujarat, India</div>
+            <div class="followers">👥 <strong>758</strong> followers · <strong>500+</strong> connections</div>
+        </div>
+    </div>
 
-    <h1>Akshay R. Dudhwala</h1>
-
-    <!-- Typing Animation -->
+    <!-- ===== Typing Tagline ===== -->
     <p class="tagline" id="typedText"></p>
 
-    <div class="bio">
-        <p>
-                Hello! I'm Akshay — a curious mind passionate about <strong>AI, Web Development</strong>, 
-                and exploring new technologies. 
-                Welcome to my page! 🙏
-        </p>
+    <!-- ===== About ===== -->
+    <div class="section">
+        <div class="section-title"><span>📋</span> About</div>
+        <div class="about-text">
+            I am an enthusiastic, self-motivated and hardworking person with a passion for quality assurance, 
+            automation, and building reliable systems. I thrive in collaborative environments and enjoy 
+            solving complex problems with a focus on engineering excellence.
+        </div>
     </div>
 
-    <!-- Skills -->
-    <div class="skills">
-        <span class="skill-tag">🐍 Python</span>
-        <span class="skill-tag">🤖 AI/ML</span>
-        <span class="skill-tag">🌐 Web Dev</span>
-        <span class="skill-tag">⚡ Docker</span>
-        <span class="skill-tag">☁️ Cloud</span>
-        <span class="skill-tag">📊 Data</span>
+    <!-- ===== Experience ===== -->
+    <div class="section">
+        <div class="section-title"><span>💼</span> Experience</div>
+        <div class="exp-item">
+            <span class="company">🚀 Aureate Labs</span>
+            <span class="tenure">2015 – 2018</span>
+        </div>
     </div>
 
-    <!-- GitHub Stats -->
-    <div class="github-stats">
-        <span>📁 <strong id="repoCount">0</strong> Repos</span>
-        <span>⭐ <strong id="starCount">0</strong> Stars</span>
-        <span>👥 <strong id="followerCount">0</strong> Followers</span>
+    <!-- ===== Education ===== -->
+    <div class="section">
+        <div class="section-title"><span>🎓</span> Education</div>
+        <div class="edu-item">
+            <span class="school">📚 Bachelor's Degree</span>
+            <span class="year">2012 – 2015</span>
+        </div>
     </div>
 
-    <!-- Links -->
+    <!-- ===== Certifications ===== -->
+    <div class="section">
+        <div class="section-title"><span>🏅</span> Licenses & Certifications</div>
+        <div class="cert-grid">
+            <span class="cert-tag">🔐 Cybersecurity (Tech Mahindra)</span>
+            <span class="cert-tag">📊 The 7 Tools of Quality</span>
+            <span class="cert-tag">📝 Wheebox Employability Skills</span>
+            <span class="cert-tag">📈 Big Data Analytics</span>
+            <span class="cert-tag">☁️ Cloud Computing</span>
+        </div>
+    </div>
+
+    <!-- ===== Skills ===== -->
+    <div class="section">
+        <div class="section-title"><span>🛠️</span> Skills</div>
+        <div class="skills">
+            <span class="skill-tag">🧪 QA / Testing</span>
+            <span class="skill-tag">⚙️ Automation</span>
+            <span class="skill-tag">🔧 CI/CD Pipelines</span>
+            <span class="skill-tag">🐍 Python</span>
+            <span class="skill-tag">🤖 AI/ML</span>
+            <span class="skill-tag">🌐 Web Dev</span>
+            <span class="skill-tag">☁️ Cloud (AWS/Azure)</span>
+            <span class="skill-tag">📊 Data Analytics</span>
+            <span class="skill-tag">🛡️ Cybersecurity</span>
+            <span class="skill-tag">⚡ Docker</span>
+        </div>
+    </div>
+
+    <!-- ===== Links ===== -->
     <div class="links">
         <a class="github-btn" href="https://github.com/akkiridder" target="_blank">🐙 GitHub</a>
         <a class="linkedin-btn" href="https://in.linkedin.com/in/akshaykumar-dudhwala-%EF%A3%BF-76119a11b" target="_blank">🔗 LinkedIn</a>
@@ -260,16 +369,16 @@
     </div>
 
     <div class="footer">
-        ✨ Built with ❤️ — Hosted on GitHub Pages
+        ✨ Built with ❤️ — Hosted on GitHub Pages | © 2026 Akshaykumar Dudhwala
     </div>
 </div>
 
 <script>
 // ===== Typing Animation =====
 const phrases = [
-    "🚀 AI Enthusiast · Developer · Explorer",
-    "💡 Learning new tech every day",
-    "☁️ Building the future, one line at a time"
+    "🔍 QA Engineer · Automation Enthusiast · Problem Solver",
+    "⚡ CI/CD · Python · AI/ML · Cloud",
+    "📊 Data-Driven · Quality-Focused · Lifelong Learner"
 ];
 let phraseIndex = 0, charIndex = 0, isDeleting = false;
 const typedEl = document.getElementById('typedText');
@@ -315,15 +424,13 @@ async function fetchGitHubStats() {
     try {
         const res = await fetch('https://api.github.com/users/akkiridder');
         const data = await res.json();
-        document.getElementById('repoCount').textContent = data.public_repos || 0;
-        document.getElementById('starCount').textContent = data.public_gists || 0;
-        document.getElementById('followerCount').textContent = data.followers || 0;
+        // Update if you want to show stats somewhere
+        console.log('GitHub Stats:', data);
     } catch (e) {
-        document.getElementById('repoCount').textContent = '⚠️';
+        console.log('GitHub API not available');
     }
 }
 fetchGitHubStats();
 </script>
-
 </body>
 </html>
