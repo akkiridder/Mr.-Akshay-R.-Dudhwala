@@ -4,12 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Akshaykumar Dudhwala | QA Engineer</title>
-    <!-- Font Awesome (optional icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <style>
-        /* ============================================================
-                   1.  CSS VARIABLES & RESET
-                   ============================================================ */
+        /* ===== CSS VARIABLES ===== */
         :root {
             --bg: #0b0f1a;
             --card-bg: rgba(255, 255, 255, 0.05);
@@ -33,16 +30,10 @@
             --shadow: 0 20px 60px rgba(0, 0, 0, 0.10);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', system-ui, sans-serif;
             background: var(--bg);
             color: var(--text);
             min-height: 100vh;
@@ -52,7 +43,6 @@
             line-height: 1.6;
         }
 
-        /* ----- animated gradient background ----- */
         .bg-gradient {
             position: fixed;
             inset: 0;
@@ -75,7 +65,6 @@
             100% { transform: translate(4%, 6%) scale(1.2); }
         }
 
-        /* ----- mouse spotlight ----- */
         #spotlight {
             position: fixed;
             width: 600px;
@@ -89,9 +78,6 @@
             will-change: left, top;
         }
 
-        /* ============================================================
-                   2.  PARTICLES CANVAS
-                   ============================================================ */
         #particles-canvas {
             position: fixed;
             inset: 0;
@@ -100,9 +86,6 @@
             opacity: 0.5;
         }
 
-        /* ============================================================
-                   3.  MAIN CARD (GLASSMORPHISM)
-                   ============================================================ */
         .card {
             position: relative;
             z-index: 1;
@@ -118,9 +101,6 @@
             transition: background var(--transition), border var(--transition), box-shadow var(--transition);
         }
 
-        /* ============================================================
-                   4.  THEME TOGGLE
-                   ============================================================ */
         .theme-toggle {
             position: fixed;
             top: 24px;
@@ -142,9 +122,6 @@
             border-color: var(--accent);
         }
 
-        /* ============================================================
-                   5.  PROFILE HEADER
-                   ============================================================ */
         .profile {
             display: flex;
             align-items: center;
@@ -187,9 +164,6 @@
             color: var(--text);
         }
 
-        /* ============================================================
-                   6.  TYPING ANIMATION
-                   ============================================================ */
         .typed-wrapper {
             font-size: 1.15rem;
             color: var(--text-muted);
@@ -209,9 +183,6 @@
             50% { opacity: 0; }
         }
 
-        /* ============================================================
-                   7.  SECTION BASE
-                   ============================================================ */
         .section {
             margin: 30px 0 20px;
             padding: 18px 0 10px;
@@ -234,18 +205,12 @@
             width: 2rem;
         }
 
-        /* ============================================================
-                   8.  ABOUT
-                   ============================================================ */
         .about-text {
             font-size: 1rem;
             color: var(--text-muted);
             line-height: 1.8;
         }
 
-        /* ============================================================
-                   9.  EXPERIENCE TIMELINE
-                   ============================================================ */
         .timeline {
             display: flex;
             flex-direction: column;
@@ -283,9 +248,6 @@
             white-space: nowrap;
         }
 
-        /* ============================================================
-                   10. EDUCATION
-                   ============================================================ */
         .edu-grid {
             display: flex;
             flex-direction: column;
@@ -310,9 +272,6 @@
             font-size: 0.95rem;
         }
 
-        /* ============================================================
-                   11. SKILLS (PROGRESS BARS)
-                   ============================================================ */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -348,9 +307,6 @@
             transition: width 1.2s ease;
         }
 
-        /* ============================================================
-                   12. PROJECT SHOWCASE
-                   ============================================================ */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -392,9 +348,6 @@
             color: var(--text-muted);
         }
 
-        /* ============================================================
-                   13. CERTIFICATE CARDS
-                   ============================================================ */
         .cert-grid {
             display: flex;
             flex-wrap: wrap;
@@ -421,9 +374,6 @@
             color: var(--accent2);
         }
 
-        /* ============================================================
-                   14. COUNTERS
-                   ============================================================ */
         .counter-grid {
             display: flex;
             flex-wrap: wrap;
@@ -446,9 +396,6 @@
             color: var(--text-muted);
         }
 
-        /* ============================================================
-                   15. SOCIAL LINKS
-                   ============================================================ */
         .links {
             display: flex;
             flex-wrap: wrap;
@@ -480,9 +427,6 @@
             font-size: 1.2rem;
         }
 
-        /* ============================================================
-                   16. CONTACT FORM
-                   ============================================================ */
         .contact-form {
             display: flex;
             flex-direction: column;
@@ -529,9 +473,6 @@
             box-shadow: 0 8px 24px rgba(91, 124, 250, 0.3);
         }
 
-        /* ============================================================
-                   17. FOOTER
-                   ============================================================ */
         .footer {
             margin-top: 30px;
             font-size: 0.8rem;
@@ -542,9 +483,6 @@
             padding-top: 20px;
         }
 
-        /* ============================================================
-                   18. SCROLL ANIMATIONS (reveal)
-                   ============================================================ */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -555,9 +493,6 @@
             transform: translateY(0);
         }
 
-        /* ============================================================
-                   19. RESPONSIVE
-                   ============================================================ */
         @media (max-width: 700px) {
             .card { padding: 24px 16px; }
             .profile { flex-direction: column; text-align: center; }
@@ -581,24 +516,17 @@
 </head>
 <body>
 
-<!-- ===== GRADIENT BACKGROUND ===== -->
 <div class="bg-gradient"></div>
-
-<!-- ===== SPOTLIGHT ===== -->
 <div id="spotlight"></div>
-
-<!-- ===== PARTICLES CANVAS ===== -->
 <canvas id="particles-canvas"></canvas>
 
-<!-- ===== THEME TOGGLE ===== -->
 <button class="theme-toggle" id="themeToggle" title="Toggle theme">
     <i class="fas fa-moon"></i>
 </button>
 
-<!-- ===== MAIN CARD ===== -->
 <div class="card">
 
-    <!-- ========== PROFILE ========== -->
+    <!-- PROFILE -->
     <div class="profile">
         <img class="profile-photo"
         src="https://ui-avatars.com/api/?name=Akshaykumar+Dudhwala&background=5b7cfa&color=fff&size=140"
@@ -613,10 +541,10 @@
         </div>
     </div>
 
-    <!-- ========== TYPING ========== -->
+    <!-- TYPING -->
     <div class="typed-wrapper" id="typedText"></div>
 
-    <!-- ========== ABOUT ========== -->
+    <!-- ABOUT -->
     <div class="section reveal">
         <div class="section-title"><i class="fas fa-user-astronaut"></i> About</div>
         <div class="about-text">
@@ -626,17 +554,16 @@
         </div>
     </div>
 
-    <!-- ========== COUNTERS ========== -->
+    <!-- COUNTERS (UPDATED) -->
     <div class="section reveal">
         <div class="counter-grid">
-            <div class="counter-item"><span class="num" data-count="4">0</span><span class="label">Years Exp.</span></div>
-            <div class="counter-item"><span class="num" data-count="12">0</span><span class="label">Projects</span></div>
+            <div class="counter-item"><span class="num" data-count="7">0</span><span class="label">Years Exp.</span></div>
+            <div class="counter-item"><span class="num" data-count="70">0</span><span class="label">Projects</span></div>
             <div class="counter-item"><span class="num" data-count="8">0</span><span class="label">Certifications</span></div>
-            <div class="counter-item"><span class="num" data-count="20">0</span><span class="label">Clients</span></div>
         </div>
     </div>
 
-    <!-- ========== EXPERIENCE ========== -->
+    <!-- EXPERIENCE -->
     <div class="section reveal">
         <div class="section-title"><i class="fas fa-briefcase"></i> Experience</div>
         <div class="timeline">
@@ -646,12 +573,12 @@
                 <span class="tenure">Jul 2022 – Present</span>
             </div>
             <div class="timeline-item">
-                <span class="company"><i class="fas fa-building"></i> Invints Infotech LLP</span>
+                <span class="company"><i class="fas fa-building"></i> Invinsts Infotech LLP</span>
                 <span class="role">Software Quality Assurance Team Lead</span>
                 <span class="tenure">Jul 2021 – Jul 2022</span>
             </div>
             <div class="timeline-item">
-                <span class="company"><i class="fas fa-laptop-code"></i> Smart Infosys</span>
+                <span class="company"><i class="fas fa-laptop-code"></i> Smat Infosys</span>
                 <span class="role">QA Specialist</span>
                 <span class="tenure">Jul 2019 – Jul 2021</span>
             </div>
@@ -663,7 +590,7 @@
         </div>
     </div>
 
-    <!-- ========== EDUCATION ========== -->
+    <!-- EDUCATION -->
     <div class="section reveal">
         <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
         <div class="edu-grid">
@@ -678,7 +605,7 @@
         </div>
     </div>
 
-    <!-- ========== SKILLS (PROGRESS BARS) ========== -->
+    <!-- SKILLS -->
     <div class="section reveal">
         <div class="section-title"><i class="fas fa-cogs"></i> Skills</div>
         <div class="skills-grid">
@@ -695,7 +622,7 @@
         </div>
     </div>
 
-    <!-- ========== PROJECTS ========== -->
+    <!-- PROJECTS -->
     <div class="section reveal">
         <div class="section-title"><i class="fas fa-folder-open"></i> Projects</div>
         <div class="project-grid">
@@ -717,7 +644,7 @@
         </div>
     </div>
 
-    <!-- ========== CERTIFICATIONS ========== -->
+    <!-- CERTIFICATIONS -->
     <div class="section reveal">
         <div class="section-title"><i class="fas fa-certificate"></i> Licenses &amp; Certifications</div>
         <div class="cert-grid">
@@ -729,7 +656,7 @@
         </div>
     </div>
 
-    <!-- ========== LINKS ========== -->
+    <!-- LINKS -->
     <div class="section reveal" style="border-top:none; padding-top:0;">
         <div class="links">
             <a href="https://github.com/akkiridder" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -738,7 +665,7 @@
         </div>
     </div>
 
-    <!-- ========== CONTACT FORM ========== -->
+    <!-- CONTACT FORM -->
     <div class="section reveal">
         <div class="section-title"><i class="fas fa-paper-plane"></i> Get In Touch</div>
         <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
@@ -749,27 +676,22 @@
         </form>
         <p style="font-size:0.75rem; color:var(--text-muted); margin-top:6px;">
             <i class="fas fa-info-circle"></i> Replace <code>YOUR_FORM_ID</code> with your Formspree endpoint.
+            <br>Get free ID at <a href="https://formspree.io" target="_blank" style="color:var(--accent);">formspree.io</a>
         </p>
     </div>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- FOOTER -->
     <div class="footer">
         <i class="fas fa-code"></i> Built with <i class="fas fa-heart" style="color:var(--accent2);"></i> — Hosted on GitHub Pages &bull; &copy; 2026 Akshaykumar Dudhwala
     </div>
 
-</div><!-- /card -->
-
-<!-- ============================================================
-        JAVASCRIPT
-        ============================================================ -->
+</div>
 
 <script>
     (function() {
         'use strict';
 
-        // ============================================================
-        // 1. THEME TOGGLE
-        // ============================================================
+        // Theme Toggle
         const toggle = document.getElementById('themeToggle');
         const root = document.documentElement;
         const saved = localStorage.getItem('theme') || 'dark';
@@ -786,57 +708,40 @@
 
         function updateToggleIcon(theme) {
             const icon = toggle.querySelector('i');
-            if (theme === 'dark') {
-                icon.className = 'fas fa-moon';
-            } else {
-                icon.className = 'fas fa-sun';
-            }
+            icon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
         }
 
-        // ============================================================
-        // 2. TYPING ANIMATION
-        // ============================================================
+        // Typing
         const phrases = [
             '🔍 QA Engineer · Automation Enthusiast · Problem Solver',
             '⚡ CI/CD · Python · AI/ML · Cloud',
             '📊 Data-Driven · Quality-Focused · Lifelong Learner'
         ];
-        let pIdx = 0,
-            cIdx = 0,
-            deleting = false;
+        let pIdx = 0, cIdx = 0, deleting = false;
         const el = document.getElementById('typedText');
 
         function typeEffect() {
             const cur = phrases[pIdx];
             if (deleting) {
                 el.textContent = cur.substring(0, cIdx--);
-                if (cIdx < 0) { deleting = false;
-                    pIdx = (pIdx + 1) % phrases.length;
-                    setTimeout(typeEffect, 500); return; }
+                if (cIdx < 0) { deleting = false; pIdx = (pIdx + 1) % phrases.length; setTimeout(typeEffect, 500); return; }
                 setTimeout(typeEffect, 40);
             } else {
                 el.textContent = cur.substring(0, cIdx++);
-                if (cIdx > cur.length) { deleting = true;
-                    setTimeout(typeEffect, 1500); return; }
+                if (cIdx > cur.length) { deleting = true; setTimeout(typeEffect, 1500); return; }
                 setTimeout(typeEffect, 60);
             }
         }
         typeEffect();
 
-        // ============================================================
-        // 3. MOUSE SPOTLIGHT
-        // ============================================================
+        // Spotlight
         const spot = document.getElementById('spotlight');
         document.addEventListener('mousemove', (e) => {
-            const x = e.clientX,
-                y = e.clientY;
-            spot.style.left = x + 'px';
-            spot.style.top = y + 'px';
+            spot.style.left = e.clientX + 'px';
+            spot.style.top = e.clientY + 'px';
         });
 
-        // ============================================================
-        // 4. PARTICLES (Canvas)
-        // ============================================================
+        // Particles
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
         let w, h, particles = [];
@@ -876,31 +781,23 @@
 
         function animateParticles() {
             ctx.clearRect(0, 0, w, h);
-            particles.forEach(p => { p.update();
-                p.draw(); });
+            particles.forEach(p => { p.update(); p.draw(); });
             requestAnimationFrame(animateParticles);
         }
         animateParticles();
 
-        // ============================================================
-        // 5. SCROLL REVEAL (Intersection Observer)
-        // ============================================================
+        // Scroll Reveal
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.15 });
         reveals.forEach(el => observer.observe(el));
 
-        // ============================================================
-        // 6. ANIMATED COUNTERS
-        // ============================================================
+        // Counters
         const counters = document.querySelectorAll('.num');
         let countersAnimated = false;
-
         const counterObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !countersAnimated) {
@@ -911,8 +808,7 @@
                         const step = Math.max(1, Math.floor(target / 40));
                         const interval = setInterval(() => {
                             current += step;
-                            if (current >= target) { current = target;
-                                clearInterval(interval); }
+                            if (current >= target) { current = target; clearInterval(interval); }
                             c.textContent = current;
                         }, 30);
                     });
@@ -921,12 +817,9 @@
         }, { threshold: 0.3 });
         counters.forEach(c => counterObserver.observe(c));
 
-        // ============================================================
-        // 7. SKILL PROGRESS BARS (on scroll)
-        // ============================================================
+        // Skill Bars
         const fills = document.querySelectorAll('.progress-fill');
         let barsAnimated = false;
-
         const barObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !barsAnimated) {
@@ -940,9 +833,7 @@
         }, { threshold: 0.2 });
         fills.forEach(f => barObserver.observe(f));
 
-        // ============================================================
-        // 8. CONTACT FORM (basic validation + placeholder)
-        // ============================================================
+        // Contact Form
         const form = document.getElementById('contactForm');
         form.addEventListener('submit', function(e) {
             const name = this.querySelector('input[name="name"]').value.trim();
@@ -952,10 +843,9 @@
                 e.preventDefault();
                 alert('Please fill in all fields.');
             }
-            // else — form will submit to Formspree (action URL must be set)
         });
 
-    })(); // end IIFE
+    })();
 </script>
 </body>
 </html>
