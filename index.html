@@ -63,7 +63,6 @@
             pointer-events: none;
         }
 
-        /* ===== Theme Toggle ===== */
         .theme-toggle {
             position: absolute;
             top: 20px;
@@ -84,7 +83,6 @@
             color: #fff;
         }
 
-        /* ===== Profile Header ===== */
         .profile-header {
             display: flex;
             align-items: center;
@@ -131,7 +129,6 @@
             color: var(--text);
         }
 
-        /* ===== Typing Animation ===== */
         .tagline {
             font-size: 1.1rem;
             color: var(--text-muted);
@@ -149,7 +146,6 @@
             50% { opacity: 0; }
         }
 
-        /* ===== Sections ===== */
         .section {
             margin: 25px 0;
             padding: 20px 0;
@@ -167,20 +163,18 @@
         }
         .section-title span { font-size: 1.3rem; }
 
-        /* ===== About ===== */
         .about-text {
             font-size: 1rem;
             line-height: 1.8;
             color: var(--text-muted);
         }
 
-        /* ===== Experience / Education ===== */
         .exp-item, .edu-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            padding: 8px 0;
+            padding: 10px 0;
             border-bottom: 1px solid var(--border);
         }
         .exp-item:last-child, .edu-item:last-child { border-bottom: none; }
@@ -188,12 +182,18 @@
             font-weight: 600;
             color: var(--text);
         }
-        .exp-item .tenure, .edu-item .year {
+        .exp-item .role, .edu-item .degree {
             font-size: 0.9rem;
             color: var(--text-muted);
+            flex-basis: 100%;
+            margin-top: 2px;
+        }
+        .exp-item .tenure {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
         }
 
-        /* ===== Certifications ===== */
         .cert-grid {
             display: flex;
             flex-wrap: wrap;
@@ -213,7 +213,6 @@
             transform: translateY(-2px);
         }
 
-        /* ===== Skills ===== */
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -235,7 +234,6 @@
             box-shadow: 0 4px 15px rgba(88,166,255,0.2);
         }
 
-        /* ===== Links ===== */
         .links {
             display: flex;
             flex-wrap: wrap;
@@ -264,7 +262,6 @@
         .links a.linkedin-btn { background: #0a66c2; color: #fff; }
         .links a.email-btn { background: #ea4335; color: #fff; }
 
-        /* ===== Footer ===== */
         .footer {
             margin-top: 25px;
             font-size: 0.8rem;
@@ -273,7 +270,6 @@
             text-align: center;
         }
 
-        /* ===== Responsive ===== */
         @media (max-width: 650px) {
             .card { padding: 25px 18px; }
             .profile-header { flex-direction: column; text-align: center; }
@@ -287,7 +283,6 @@
 <body>
 
 <div class="card" id="app">
-    <!-- Theme Toggle -->
     <button class="theme-toggle" id="themeToggle" title="Toggle Theme">🌓</button>
 
     <!-- ===== Profile Header ===== -->
@@ -319,7 +314,23 @@
         <div class="section-title"><span>💼</span> Experience</div>
         <div class="exp-item">
             <span class="company">🚀 Aureate Labs</span>
-            <span class="tenure">2015 – 2018</span>
+            <span class="role">Senior Software Quality Assurance Specialist</span>
+            <span class="tenure">Jul 2022 – Present</span>
+        </div>
+        <div class="exp-item">
+            <span class="company">🏢 Invinsts Infotech LLP</span>
+            <span class="role">Software Quality Assurance Team Lead</span>
+            <span class="tenure">Jul 2021 – Jul 2022</span>
+        </div>
+        <div class="exp-item">
+            <span class="company">💻 Smat Infosys</span>
+            <span class="role">QA Specialist</span>
+            <span class="tenure">Jul 2019 – Jul 2021</span>
+        </div>
+        <div class="exp-item">
+            <span class="company">📊 Z-click Development</span>
+            <span class="role">Data Analyst and Research Executive</span>
+            <span class="tenure">May 2018 – Jul 2019</span>
         </div>
     </div>
 
@@ -327,8 +338,12 @@
     <div class="section">
         <div class="section-title"><span>🎓</span> Education</div>
         <div class="edu-item">
-            <span class="school">📚 Bachelor's Degree</span>
-            <span class="year">2012 – 2015</span>
+            <span class="school">🎓 SRIMCA</span>
+            <span class="degree">Master of Computer Application (MCA)</span>
+        </div>
+        <div class="edu-item">
+            <span class="school">📚 Bhagwana Mahavir College of Computer Application</span>
+            <span class="degree">Bachelor of Computer Application (BCA)</span>
         </div>
     </div>
 
@@ -418,19 +433,6 @@ toggle.addEventListener('click', () => {
     root.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
 });
-
-// ===== GitHub Stats (Live) =====
-async function fetchGitHubStats() {
-    try {
-        const res = await fetch('https://api.github.com/users/akkiridder');
-        const data = await res.json();
-        // Update if you want to show stats somewhere
-        console.log('GitHub Stats:', data);
-    } catch (e) {
-        console.log('GitHub API not available');
-    }
-}
-fetchGitHubStats();
 </script>
 </body>
 </html>
