@@ -6,7 +6,6 @@
     <title>Akshaykumar Dudhwala | QA Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <style>
-        /* ===== CSS VARIABLES ===== */
         :root {
             --bg: #0b0f1a;
             --card-bg: rgba(255, 255, 255, 0.05);
@@ -170,27 +169,13 @@
             min-height: 2.8rem;
             margin: 6px 0 16px;
         }
-        .typed-cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1.2em;
-            background: var(--accent);
-            vertical-align: text-bottom;
-            animation: blink 0.8s step-end infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
 
         .section {
             margin: 30px 0 20px;
             padding: 18px 0 10px;
             border-top: 1px solid var(--card-border);
         }
-        .section:first-of-type {
-            border-top: none;
-        }
+        .section:first-of-type { border-top: none; }
         .section-title {
             font-size: 1.2rem;
             font-weight: 600;
@@ -200,10 +185,7 @@
             align-items: center;
             gap: 10px;
         }
-        .section-title i {
-            font-size: 1.4rem;
-            width: 2rem;
-        }
+        .section-title i { font-size: 1.4rem; width: 2rem; }
 
         .about-text {
             font-size: 1rem;
@@ -309,7 +291,7 @@
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 20px;
         }
         .project-card {
@@ -325,14 +307,8 @@
             border-color: var(--accent);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
         }
-        .project-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 6px;
-        }
-        .project-card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
+        .project-card h4 { font-size: 1.1rem; margin-bottom: 6px; }
+        .project-card p { font-size: 0.9rem; color: var(--text-muted); }
         .project-card .tags {
             display: flex;
             flex-wrap: wrap;
@@ -370,9 +346,7 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(91, 124, 250, 0.15);
         }
-        .cert-card i {
-            color: var(--accent2);
-        }
+        .cert-card i { color: var(--accent2); }
 
         .counter-grid {
             display: flex;
@@ -423,52 +397,22 @@
             transform: scale(1.04);
             box-shadow: 0 8px 24px rgba(91, 124, 250, 0.25);
         }
-        .links a i {
-            font-size: 1.2rem;
-        }
+        .links a i { font-size: 1.2rem; }
 
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            max-width: 500px;
-            margin: 6px 0 10px;
-        }
-        .contact-form input,
-        .contact-form textarea {
-            padding: 12px 18px;
-            border-radius: 30px;
-            border: 1px solid var(--card-border);
-            background: var(--glass);
-            color: var(--text);
-            font-size: 0.95rem;
-            transition: var(--transition);
-            backdrop-filter: blur(4px);
-            outline: none;
-        }
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(91, 124, 250, 0.15);
-        }
-        .contact-form textarea {
-            min-height: 100px;
-            border-radius: 20px;
-            resize: vertical;
-        }
-        .contact-form button {
-            padding: 12px 30px;
-            border: none;
-            border-radius: 40px;
+        .contact-email-btn {
+            display: inline-block;
+            padding: 14px 40px;
             background: linear-gradient(135deg, var(--accent), var(--accent2));
             color: #fff;
+            border-radius: 40px;
+            text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            border: none;
             cursor: pointer;
-            transition: var(--transition);
-            align-self: flex-start;
         }
-        .contact-form button:hover {
+        .contact-email-btn:hover {
             transform: scale(1.04);
             box-shadow: 0 8px 24px rgba(91, 124, 250, 0.3);
         }
@@ -505,7 +449,6 @@
             .skills-grid { grid-template-columns: 1fr; }
             .counter-grid { flex-direction: column; align-items: center; }
             .links { justify-content: center; }
-            .contact-form button { align-self: center; }
             .theme-toggle { top: 16px; right: 16px; padding: 8px 12px; font-size: 1.2rem; }
         }
         @media (max-width: 480px) {
@@ -526,7 +469,7 @@
 
 <div class="card">
 
-    <!-- PROFILE -->
+    <!-- ========== PROFILE ========== -->
     <div class="profile">
         <img class="profile-photo"
         src="https://ui-avatars.com/api/?name=Akshaykumar+Dudhwala&background=5b7cfa&color=fff&size=140"
@@ -541,10 +484,10 @@
         </div>
     </div>
 
-    <!-- TYPING -->
+    <!-- ========== TYPING ========== -->
     <div class="typed-wrapper" id="typedText"></div>
 
-    <!-- ABOUT -->
+    <!-- ========== ABOUT ========== -->
     <div class="section reveal">
         <div class="section-title"><i class="fas fa-user-astronaut"></i> About</div>
         <div class="about-text">
@@ -554,7 +497,7 @@
         </div>
     </div>
 
-    <!-- COUNTERS (UPDATED) -->
+    <!-- ========== COUNTERS (updated: 7, 70, 8) ========== -->
     <div class="section reveal">
         <div class="counter-grid">
             <div class="counter-item"><span class="num" data-count="7">0</span><span class="label">Years Exp.</span></div>
@@ -563,7 +506,7 @@
         </div>
     </div>
 
-    <!-- EXPERIENCE -->
+    <!-- ========== EXPERIENCE (fixed spellings) ========== -->
     <div class="section reveal">
         <div class="section-title"><i class="fas fa-briefcase"></i> Experience</div>
         <div class="timeline">
@@ -573,12 +516,12 @@
                 <span class="tenure">Jul 2022 – Present</span>
             </div>
             <div class="timeline-item">
-                <span class="company"><i class="fas fa-building"></i> Invinsts Infotech LLP</span>
+                <span class="company"><i class="fas fa-building"></i> Invints Infotech LLP</span>
                 <span class="role">Software Quality Assurance Team Lead</span>
                 <span class="tenure">Jul 2021 – Jul 2022</span>
             </div>
             <div class="timeline-item">
-                <span class="company"><i class="fas fa-laptop-code"></i> Smat Infosys</span>
+                <span class="company"><i class="fas fa-laptop-code"></i> Smart Infosys</span>
                 <span class="role">QA Specialist</span>
                 <span class="tenure">Jul 2019 – Jul 2021</span>
             </div>
@@ -590,7 +533,7 @@
         </div>
     </div>
 
-    <!-- EDUCATION -->
+    <!-- ========== EDUCATION (fixed spelling) ========== -->
     <div class="section reveal">
         <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
         <div class="edu-grid">
@@ -599,13 +542,13 @@
                 <span class="degree">Master of Computer Application (MCA)</span>
             </div>
             <div class="edu-item">
-                <span class="school"><i class="fas fa-school"></i> Bhagwana Mahavir College of Computer Application</span>
+                <span class="school"><i class="fas fa-school"></i> Bhagwan Mahavir College Of Computer Application</span>
                 <span class="degree">Bachelor of Computer Application (BCA)</span>
             </div>
         </div>
     </div>
 
-    <!-- SKILLS -->
+    <!-- ========== SKILLS ========== -->
     <div class="section reveal">
         <div class="section-title"><i class="fas fa-cogs"></i> Skills</div>
         <div class="skills-grid">
@@ -622,29 +565,39 @@
         </div>
     </div>
 
-    <!-- PROJECTS -->
+    <!-- ========== PROJECTS (updated with 5 new ones) ========== -->
     <div class="section reveal">
         <div class="section-title"><i class="fas fa-folder-open"></i> Projects</div>
         <div class="project-grid">
             <div class="project-card">
-                <h4>📊 QA Dashboard</h4>
-                <p>Real-time test execution &amp; reporting dashboard.</p>
-                <div class="tags"><span>Python</span><span>Flask</span><span>Chart.js</span></div>
+                <h4>🏢 Enterprise SaaS Testing Suite</h4>
+                <p>CRM, ERP, and cloud‑based tools testing — workflow engines, data security, HIPAA compliance validation.</p>
+                <div class="tags"><span>SaaS</span><span>CRM</span><span>ERP</span><span>HIPAA</span></div>
             </div>
             <div class="project-card">
-                <h4>🤖 Test Automation Framework</h4>
-                <p>End-to-end testing with Selenium &amp; Pytest.</p>
-                <div class="tags"><span>Selenium</span><span>Pytest</span><span>Allure</span></div>
+                <h4>🌐 API &amp; Microservices Gateway</h4>
+                <p>REST/GraphQL contract testing, latency analysis, internal system validation using Postman &amp; REST Assured.</p>
+                <div class="tags"><span>REST</span><span>GraphQL</span><span>Postman</span><span>REST Assured</span></div>
             </div>
             <div class="project-card">
-                <h4>☁️ CI/CD Pipeline</h4>
-                <p>GitHub Actions + Docker based deployment pipeline.</p>
-                <div class="tags"><span>GitHub Actions</span><span>Docker</span><span>AWS</span></div>
+                <h4>🧠 AI Model Evaluation Framework</h4>
+                <p>AI/ML pipeline testing — prompt response validation, conversational flow (IVR/Voice AI) with DeepEval &amp; LangSmith.</p>
+                <div class="tags"><span>AI/ML</span><span>DeepEval</span><span>LangSmith</span><span>IVR</span></div>
+            </div>
+            <div class="project-card">
+                <h4>💰 BFSI Transaction Platform</h4>
+                <p>Banking, insurance (Guidewire), e‑commerce — real‑time pricing, data consistency, secure payment gateway validation.</p>
+                <div class="tags"><span>BFSI</span><span>Guidewire</span><span>Payments</span><span>Real‑Time</span></div>
+            </div>
+            <div class="project-card">
+                <h4>📱 Cross‑Platform App Automation</h4>
+                <p>Enterprise iOS/Android apps with backend integration — test automation using Playwright, Cypress, and Appium.</p>
+                <div class="tags"><span>iOS</span><span>Android</span><span>Playwright</span><span>Cypress</span><span>Appium</span></div>
             </div>
         </div>
     </div>
 
-    <!-- CERTIFICATIONS -->
+    <!-- ========== CERTIFICATIONS ========== -->
     <div class="section reveal">
         <div class="section-title"><i class="fas fa-certificate"></i> Licenses &amp; Certifications</div>
         <div class="cert-grid">
@@ -656,7 +609,7 @@
         </div>
     </div>
 
-    <!-- LINKS -->
+    <!-- ========== LINKS ========== -->
     <div class="section reveal" style="border-top:none; padding-top:0;">
         <div class="links">
             <a href="https://github.com/akkiridder" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -665,22 +618,19 @@
         </div>
     </div>
 
-    <!-- CONTACT FORM -->
+    <!-- ========== CONTACT (No Formspree – direct email) ========== -->
     <div class="section reveal">
         <div class="section-title"><i class="fas fa-paper-plane"></i> Get In Touch</div>
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-        </form>
-        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:6px;">
-            <i class="fas fa-info-circle"></i> Replace <code>YOUR_FORM_ID</code> with your Formspree endpoint.
-            <br>Get free ID at <a href="https://formspree.io" target="_blank" style="color:var(--accent);">formspree.io</a>
+        <a href="mailto:akki.dw007@gmail.com?subject=Contact%20from%20Portfolio&body=Hi%20Akshay%2C%20I%20wanted%20to%20reach%20out..." 
+           class="contact-email-btn">
+           <i class="fas fa-envelope"></i> Send Email
+        </a>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:12px;">
+            Or directly email me at <strong>akki.dw007@gmail.com</strong>
         </p>
     </div>
 
-    <!-- FOOTER -->
+    <!-- ========== FOOTER ========== -->
     <div class="footer">
         <i class="fas fa-code"></i> Built with <i class="fas fa-heart" style="color:var(--accent2);"></i> — Hosted on GitHub Pages &bull; &copy; 2026 Akshaykumar Dudhwala
     </div>
@@ -711,7 +661,7 @@
             icon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
         }
 
-        // Typing
+        // Typing Animation
         const phrases = [
             '🔍 QA Engineer · Automation Enthusiast · Problem Solver',
             '⚡ CI/CD · Python · AI/ML · Cloud',
@@ -734,7 +684,7 @@
         }
         typeEffect();
 
-        // Spotlight
+        // Mouse Spotlight
         const spot = document.getElementById('spotlight');
         document.addEventListener('mousemove', (e) => {
             spot.style.left = e.clientX + 'px';
@@ -795,7 +745,7 @@
         }, { threshold: 0.15 });
         reveals.forEach(el => observer.observe(el));
 
-        // Counters
+        // Animated Counters
         const counters = document.querySelectorAll('.num');
         let countersAnimated = false;
         const counterObserver = new IntersectionObserver((entries) => {
@@ -817,7 +767,7 @@
         }, { threshold: 0.3 });
         counters.forEach(c => counterObserver.observe(c));
 
-        // Skill Bars
+        // Skill Progress Bars
         const fills = document.querySelectorAll('.progress-fill');
         let barsAnimated = false;
         const barObserver = new IntersectionObserver((entries) => {
@@ -832,18 +782,6 @@
             });
         }, { threshold: 0.2 });
         fills.forEach(f => barObserver.observe(f));
-
-        // Contact Form
-        const form = document.getElementById('contactForm');
-        form.addEventListener('submit', function(e) {
-            const name = this.querySelector('input[name="name"]').value.trim();
-            const email = this.querySelector('input[name="email"]').value.trim();
-            const msg = this.querySelector('textarea[name="message"]').value.trim();
-            if (!name || !email || !msg) {
-                e.preventDefault();
-                alert('Please fill in all fields.');
-            }
-        });
 
     })();
 </script>
