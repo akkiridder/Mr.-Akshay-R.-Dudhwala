@@ -122,7 +122,7 @@ I am an enthusiastic, self-motivated and hardworking person with a passion for *
 
 ## 🌐 Website
 
-🔗 **Live Portfolio:** [https://akkiridder.github.io/Mr.-Akshay-R.-Dudhwala/](https://akkiridder.github.io/Mr.-Akshay-R.-Dudhwala/)
+🔗 **Live Portfolio:** [https://akkiridder.github.io/Mr.-Akshay-R.-Dudhwala/](https://akkiridder.github.io/Akshaykumar-Dudhwala/)
 
 ---
 
